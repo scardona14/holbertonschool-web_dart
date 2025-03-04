@@ -3,9 +3,9 @@ int whoWins(Map<String, int> teamA, Map<String, int> teamB) {
   int bScore = (teamB['Free throws'] ?? 0) + 2 * (teamB['2-pointers'] ?? 0) + 3 * (teamB['3-pointers'] ?? 0);
 
   if (aScore > bScore) {
-    return 1;
+    return (1);
   } else if (aScore < bScore) {
-    return 2;
+    return (2);
   }
-    return 0;
+    return (0);
   }
