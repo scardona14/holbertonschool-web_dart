@@ -1,3 +1,5 @@
+import 'dart:math';
+
 String longestUniqueSubstring(String str) {
   int start = 0;
   int maxLength = 0;
@@ -15,4 +17,3 @@ String longestUniqueSubstring(String str) {
     map[str[end]] = end;
   }
   return maxSubstring;
-}
