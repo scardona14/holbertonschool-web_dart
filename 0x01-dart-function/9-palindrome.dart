@@ -1,18 +1,16 @@
 bool is Palindrome(String s) {
-  if (s.length < 3) {
+
+  if (s.length < 3)
     return false;
-  }
-  return palindrome(s);
-}
 
-bool palindrome(String s) {
-  if (s.length <= 1) {
-    return true;
-  }
+    String inReverse = "";
 
-  if (s[0] != s[s.length - 1]) {
-    return false;
-  }
+    for (var idx = s.length - 1; idx >= 0; idx--) { 
+      inReverse += s[idx];
+    }
+    if (inReverse == s)
+      return true;
 
-  return palindrome(s.substring(1, s.length - 1));
-}
+      else
+        return false;
+    }
