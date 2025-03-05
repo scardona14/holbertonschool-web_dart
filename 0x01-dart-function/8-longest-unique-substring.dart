@@ -16,4 +16,5 @@ String longestUniqueSubstring(String str) {
     }
     map[str[end]] = end;
   }
+  
   return maxSubstring;
