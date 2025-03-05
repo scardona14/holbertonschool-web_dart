@@ -1,20 +1,26 @@
-import 'dart:math';
-
 String longestUniqueSubstring(String str) {
+  if (str.isEmpty) return "";
+
+  Map<String, int> lastSeen = {};
   int start = 0;
   int maxLength = 0;
-  String maxSubstring = '';
-  Map<String, int> map = {};
+  int resultStart = 0;
 
   for (int end = 0; end < str.length; end++) {
-    if (map.containsKey(str[end])) {
-      start = max(map[str[end]]! + 1, start);
+    String currentChar = str[end];
+
+    if (lastSeen.containsKey(currentChar) && lastSeen[currentChar]! >= start) {
+      start = lastSeen[currentChar]! + 1;
     }
-    if (end - start + 1 > maxLength) {
-      maxLength = end - start + 1;
-      maxSubstring = str.substring(start, end + 1);
+
+    lastSeen[currentChar] = end;
+
+    int currentLength = end - start + 1;
+    if (currentLength > maxLength) {
+      maxLength = currentLength;
+      resultStart = start;
     }
-    map[str[end]] = end;
   }
-  
-  return maxSubstring;
+
+  return str.substring(resultStart, resultStart + maxLength);
+}
