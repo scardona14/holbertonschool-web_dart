@@ -16,7 +16,7 @@ class User {
       'id': id,
       'name': name,
       'age': age,
-      'height': height
+      'height': height,
     };
   }
 
