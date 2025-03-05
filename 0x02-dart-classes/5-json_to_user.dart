@@ -8,7 +8,7 @@ class User {
     required this.id,
     required this.name,
     required this.age,
-    required this.height
+    required this.height,
   });
 
   Map<String, dynamic> toJson() {
