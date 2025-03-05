@@ -16,12 +16,12 @@ class User {
       'id': id,
       'name': name,
       'age': age,
-      'height': height,
+      'height': height
     };
   }
 
   static User fromJson(Map<dynamic, dynamic> userJson) {
-    return User(
+    return new User(
       id: userJson['id'],
       name: userJson['name'],
       age: userJson['age'],
