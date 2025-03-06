@@ -1,4 +1,5 @@
+import 'utils.dart';
+
 Future<void> userCount() async {
-  int count = await fetchUsersCount();
-  print(count);
+  print(await fetUserCount());
 }
